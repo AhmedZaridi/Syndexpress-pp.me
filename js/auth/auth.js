@@ -8,14 +8,14 @@ export const users = [
   },
   {
     id: '2',
-    email: 'syndic@syndexpress.com',
+    email: 'syndic@gmail.com',
     password: 'syndic123',
     role: 'syndic',
     name: 'Syndic Manager'
   },
   {
     id: '3',
-    email: 'resident@syndexpress.com',
+    email: 'ahmed@gmail.com',
     password: 'resident123',
     role: 'resident',
     name: 'ahmed Resident'
