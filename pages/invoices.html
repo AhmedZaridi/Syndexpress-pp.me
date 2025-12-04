@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factures - SyndExpress</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Factures</h1>
+            <button id="uploadInvoiceBtn" class="btn btn-primary">Téléverser une Facture</button>
+        </div>
+
+        <div class="table-container">
+            <table id="invoicesTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th data-sort="fileName">Nom du Fichier <span class="sort-icon">↕</span></th>
+                        <th data-sort="type">Type <span class="sort-icon">↕</span></th>
+                        <th data-sort="uploadDate">Date de Téléversement <span class="sort-icon">↕</span></th>
+                        <th data-sort="uploadedBy">Téléversé Par <span class="sort-icon">↕</span></th>
+                        <th data-sort="fileSize">Taille <span class="sort-icon">↕</span></th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="invoicesTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="invoiceModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Téléverser une Facture</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="invoiceForm">
+                <div class="form-group">
+                    <label for="invoiceFile">Sélectionner un Fichier *</label>
+                    <input type="file" id="invoiceFile" accept=".pdf,.jpg,.jpeg,.png" required>
+                    <small>Formats acceptés : PDF, JPG, PNG (Max 10 Mo)</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="invoiceType">Type *</label>
+                    <select id="invoiceType" required>
+                        <option value="cotisation">Cotisation</option>
+                        <option value="prestation">Prestation</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="invoiceDescription">Description</label>
+                    <textarea id="invoiceDescription" rows="3"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Téléverser</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/js/pages/invoices.js"></script>
+</body>
+</html>

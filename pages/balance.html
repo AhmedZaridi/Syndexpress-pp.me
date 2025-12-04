@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résumé du Solde - SyndExpress</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/balance.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Résumé du Solde</h1>
+            <p>Vue d'ensemble financière des cotisations et prestations</p>
+        </div>
+
+        <div class="balance-summary">
+            <div class="balance-card balance-income">
+                <div class="balance-icon">+</div>
+                <div class="balance-info">
+                    <h3>Total des Cotisations</h3>
+                    <p class="balance-amount" id="totalCotisations">0 DH</p>
+                    <small id="cotisationsCount">0 paiements</small>
+                </div>
+            </div>
+
+            <div class="balance-card balance-expense">
+                <div class="balance-icon">-</div>
+                <div class="balance-info">
+                    <h3>Total des Prestations</h3>
+                    <p class="balance-amount" id="totalPrestations">0 DH</p>
+                    <small id="prestationsCount">0 services</small>
+                </div>
+            </div>
+
+            <div class="balance-card balance-net" id="netBalanceCard">
+                <div class="balance-icon">=</div>
+                <div class="balance-info">
+                    <h3>Solde Net</h3>
+                    <p class="balance-amount" id="netBalance">0 DH</p>
+                    <small id="balanceStatus"></small>
+                </div>
+            </div>
+        </div>
+
+        <div class="details-section">
+            <div class="detail-column">
+                <h2>Détail des Cotisations</h2>
+                <div class="breakdown-list" id="cotisationsBreakdown"></div>
+            </div>
+
+            <div class="detail-column">
+                <h2>Détail des Prestations</h2>
+                <div class="breakdown-list" id="prestationsBreakdown"></div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/js/pages/balance.js"></script>
+</body>
+</html>

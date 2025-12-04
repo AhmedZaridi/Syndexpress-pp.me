@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prestations - SyndExpress</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Prestations</h1>
+            <button id="addPrestationBtn" class="btn btn-primary" style="display: none;">Ajouter une Prestation</button>
+        </div>
+
+        <div class="table-container">
+            <table id="prestationsTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th data-sort="description">Description <span class="sort-icon">↕</span></th>
+                        <th data-sort="provider">Fournisseur <span class="sort-icon">↕</span></th>
+                        <th data-sort="amount">Montant (DHS) <span class="sort-icon">↕</span></th>
+                        <th data-sort="date">Date <span class="sort-icon">↕</span></th>
+                        <th data-sort="category">Catégorie <span class="sort-icon">↕</span></th>
+                        <th data-sort="status">Statut <span class="sort-icon">↕</span></th>
+                        <th id="actionsHeader" style="display: none;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="prestationsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="prestationModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Ajouter une Prestation</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="prestationForm">
+                <input type="hidden" id="prestationId">
+
+                <div class="form-group">
+                    <label for="prestationDescription">Description *</label>
+                    <input type="text" id="prestationDescription" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestationProvider">Fournisseur *</label>
+                    <input type="text" id="prestationProvider" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestationAmount">Montant (DHS) *</label>
+                    <input type="number" id="prestationAmount" step="0.01" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestationDate">Date *</label>
+                    <input type="date" id="prestationDate" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestationCategory">Catégorie *</label>
+                    <select id="prestationCategory" required>
+                        <option value="maintenance">Maintenance</option>
+                        <option value="repair">Réparation</option>
+                        <option value="cleaning">Nettoyage</option>
+                        <option value="security">Sécurité</option>
+                        <option value="utilities">Services Publics</option>
+                        <option value="insurance">Assurance</option>
+                        <option value="other">Autre</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="prestationStatus">Statut *</label>
+                    <select id="prestationStatus" required>
+                        <option value="completed">Terminé</option>
+                        <option value="pending">En attente</option>
+                        <option value="cancelled">Annulé</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/js/pages/prestations.js"></script>
+</body>
+</html>

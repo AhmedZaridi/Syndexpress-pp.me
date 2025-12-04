@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Résidents - SyndExpress</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/table.css">
+</head>
+<body>
+    <nav id="navbar"></nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Résidents</h1>
+            <button id="addResidentBtn" class="btn btn-primary" style="display: none;">Ajouter un Résident</button>
+        </div>
+
+        <div class="table-container">
+            <table id="residentsTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th data-sort="name">Nom <span class="sort-icon">↕</span></th>
+                        <th data-sort="email">Email <span class="sort-icon">↕</span></th>
+                        <th data-sort="apartment">Appartement <span class="sort-icon">↕</span></th>
+                        <th data-sort="phone">Téléphone <span class="sort-icon">↕</span></th>
+                        <th data-sort="status">Statut <span class="sort-icon">↕</span></th>
+                        <th id="actionsHeader" style="display: none;">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="residentsTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="residentModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Ajouter un Résident</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="residentForm">
+                <input type="hidden" id="residentId">
+
+                <div class="form-group">
+                    <label for="residentName">Nom *</label>
+                    <input type="text" id="residentName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="residentEmail">Email *</label>
+                    <input type="email" id="residentEmail" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="residentApartment">Appartement *</label>
+                    <input type="text" id="residentApartment" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="residentPhone">Téléphone</label>
+                    <input type="tel" id="residentPhone">
+                </div>
+
+                <div class="form-group">
+                    <label for="residentStatus">Statut *</label>
+                    <select id="residentStatus" required>
+                        <option value="active">Actif</option>
+                        <option value="inactive">Inactif</option>
+                    </select>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="cancelBtn">Annuler</button>
+                    <button type="submit" class="btn btn-primary">Enregistrer</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="/js/pages/residents.js"></script>
+</body>
+</html>
